@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./images/favicon.png" />
+    <title>STUDY TIMER</title>
+    <style type="text/css">
+      @import url('./style.css');
+      @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <div class="content border">
+        <img src="./images/cover.png" width="100%" />
+        <div class="box">
+          <div id="timer">
+            <span id="text"></span>
+          </div>
+          <div id="message"></div>
+          <div class="btn-group">
+            <button id="start" class="btn">시작</button>
+            <button id="cancel" class="btn" hidden>취소</button>
+          </div>
+          <div class="main-list" id="list"></div>
+        </div>
+      </div>
+      <div class="side">
+        <div id="floating" class="floating">
+          <iframe
+            width="300"
+            height="200"
+            src="https://www.youtube-nocookie.com/embed/m56ejHxs2js?start=4"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+          <div class="slideshow-container">
+            <div class="mySlides fade">
+              <div class="number-text">1 / 2</div>
+              <img src="./images/moso.jpg" width="100%" height="200" />
+            </div>
+            <div class="mySlides fade">
+              <div class="number-text">2 / 2</div>
+              <img src="./images/moso2.jpeg" width="100%" height="200" />
+            </div>
+            <a id="prev" class="prev">&#10094;</a>
+            <a id="next" class="next">&#10095;</a>
+          </div>
+          <br />
+          <div style="text-align: center">
+            <span id="dot" class="dot"></span>
+            <span id="dot" class="dot"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="module" src="./index.js"></script>
+</html>

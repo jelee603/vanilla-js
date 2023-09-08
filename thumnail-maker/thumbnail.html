@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyCode</title>
+    <style lang="text/css">
+      .button {
+          padding: 20px;
+          display: inline-block;
+          font-size: 16px;
+          border: none;
+          border-radius: 50%;
+      }
+
+      .yellow {
+          background-color: #ffcc00;
+      }
+
+      .green {
+          background-color: #42b983;
+      }
+
+      .black {
+          background-color: #000000;
+      }
+
+      .pink {
+          background-color: #db7093;
+      }
+
+      .blue {
+          background-color: #3178c6;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="btn_group">
+      <button class="button yellow" data-color="yellow"></button>
+      <button class="button green" data-color="green"></button>
+      <button class="button black" data-color="black"></button>
+      <button class="button pink" data-color="pink"></button>
+      <button class="button blue" data-color="blue"></button>
+    </div>
+    <canvas id="canvas"></canvas>
+    <br />
+    <input id="input_text" type="text" value="Image" />
+    <button id="btn_save" type="button">이미지 저장</button>
+
+    <script type="text/javascript">
+      const fontColor = {
+        black: '#61dafb',
+        green: '#ffffff',
+        yellow: '#000000',
+        pink: '#ffffff',
+        blue: '#ffffff',
+      };
+
+      const bgColor = {
+        black: '#000000',
+        green: '#42b983',
+        yellow: '#ffcc00',
+        pink: '#db7093',
+        blue: '#3178c6',
+      };
+
+      function getColors(colorName) {
+        return [bgColor[colorName], fontColor[colorName]];
+      }
+
+      const canvas = document.getElementById('canvas');
+      const ctx = canvas.getContext('2d');
+      const btnGroup = document.getElementById('btn_group');
+      const btnSave = document.getElementById('btn_save');
+      const inputText = document.getElementById('input_text');
+      let text = inputText.value;
+
+      inputText.addEventListener('input', (e) => {
+        text = e.target.value;
+        draw();
+      });
+
+      btnGroup.addEventListener('click', (e) => {
+        const color = e.target.dataset.color; 
+        if (color) {
+          changeColor(color);
+        }
+      });
+      btnSave.addEventListener('click', () => onSave());
+
+      draw();
+
+      function draw(colorName = 'yellow') {
+        const [bgColor, fontColor] = getColors(colorName);
+        ctx.fillStyle = bgColor;
+        ctx.fillRect(0, 0, 300, 150);
+
+        ctx.fillStyle = fontColor;
+        ctx.font = '48px roboto';
+        ctx.textAlign = 'center';
+        ctx.fillText(text, canvas.clientWidth / 2, 90);
+      }
+
+      function changeColor(colorName) {
+        draw(colorName);
+      }
+
+      function onSave() {
+        const dataURL = canvas.toDataURL('image/png');
+        let link = document.createElement('a');
+        link.download = 'capture';
+        link.href = dataURL;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        link = null;
+      }
+    </script>
+  </body>
+</html>
