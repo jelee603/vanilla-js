@@ -1,10 +1,7 @@
-## Installation
-``` js
-$ npm install
-```
+## Webpack 사용해보기
 
-## Quick Start
-``` js
-$ npm run dev
-```
-View the website at: http://localhost:8080
+웹팩으로 번들파일을 만들어 라우터를 구현해봤다. 
+
+크기는 작지만, 차트와 위젯 라이브러리를 추가해서 구현했다. 
+
+![screen](./screen.png)

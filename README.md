@@ -1,20 +1,5 @@
 # vanilla-js
-바닐라 자바스크립트로 만드는 토이 프로젝트
 
-### Lab_01
-- 블로그에 썸네일 이미지 로고를 만들어 png 파일로 다운받을 수 있는 페이지
+바닐라 자바스크립트로 연습한 결과물을 정리하기 위해 만든 저장소입니다.
 
-![screen](https://jelee603.github.io/images/post/thumbnail-demo.gif)
-
-### Lab_02
-- 인풋박스에 숫자를 입력할 수 있는 페이지 + jest 테스트 적용
-
-### Lab_03
-- 동기부여를 하면서 집중할 수 있는 2시간 집중 타이머 페이지 
-
-![screen](./Lab_03/screen.png)
-
-### Lab_04
-- SPA 라우터(테이블, 차트, 테스트) 페이지 + 웹팩 설정
-
-![screen](./Lab_04/screen.png)
+유튜브를 보고, 만든 것도 있고 갑자기 떠오르는 아이디어로 만든 페이지도 있습니다. 새로 알게 된 개념은 [블로그](https://jelee603.github.io/ToyProject)에도 업데이트하고 있습니다.
